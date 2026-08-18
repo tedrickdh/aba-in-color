@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "RBT",
+    "title": "RBT Career Growth",
+    "description": "Resources for building experience, strengthening skills, and planning your next professional step.",
+    "link": "#",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "category": "BCBA",
+    "title": "BCBA Leadership Resources",
+    "description": "Tools and ideas for professional growth, leadership, collaboration, and mentorship.",
+    "link": "#",
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "category": "Student",
+    "title": "Student & Future Professional Resources",
+    "description": "Explore career pathways, fieldwork, mentorship, graduate education, and professional connections.",
+    "link": "#",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "category": "Career",
+    "title": "Career Development",
+    "description": "Support for resumes, networking, professional visibility, interviews, and career planning.",
+    "link": "#",
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "category": "Business",
+    "title": "ABA Business Ownership",
+    "description": "Resources for entrepreneurs, clinic owners, consultants, and professionals exploring business ownership.",
+    "link": "#",
+    "status": "active"
+  },
+  {
+    "id": 6,
+    "category": "Leadership",
+    "title": "Leadership Development",
+    "description": "Resources for professionals who want to lead teams, organizations, committees, and communities.",
+    "link": "leadership.html",
+    "status": "active"
+  }
+]

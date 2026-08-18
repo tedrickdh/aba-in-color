@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "type": "Job",
+    "title": "BCBA Opportunity",
+    "organization": "Community Partner",
+    "location": "Houston, Texas",
+    "workType": "Hybrid",
+    "description": "Explore an ABA career opportunity with a community partner.",
+    "link": "#",
+    "status": "open"
+  },
+  {
+    "id": 2,
+    "type": "Mentorship",
+    "title": "Become a Mentor",
+    "organization": "ABA in Color",
+    "location": "Houston, Texas",
+    "workType": "Community",
+    "description": "Support an emerging professional by sharing your experience, perspective, and guidance.",
+    "link": "get-involved.html",
+    "status": "open"
+  },
+  {
+    "id": 3,
+    "type": "Speaking",
+    "title": "Share Your Expertise",
+    "organization": "ABA in Color",
+    "location": "Houston, Texas",
+    "workType": "Events",
+    "description": "Lead a discussion, workshop, panel, or professional development experience.",
+    "link": "get-involved.html",
+    "status": "open"
+  },
+  {
+    "id": 4,
+    "type": "Leadership",
+    "title": "Committee Leadership",
+    "organization": "ABA in Color",
+    "location": "Houston, Texas",
+    "workType": "Volunteer",
+    "description": "Help shape programs, events, partnerships, communication, and organizational priorities.",
+    "link": "get-involved.html",
+    "status": "open"
+  }
+]

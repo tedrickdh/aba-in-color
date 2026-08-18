@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "title": "ABA in Color Community Meetup",
+        "date": "2026-09-24",
+        "displayDate": "SEP 24, 2026",
+        "time": "6:00 PM – 8:00 PM",
+        "location": "Houston, Texas",
+        "category": "Networking",
+        "description": "Connect with professionals from across the Houston-area ABA community in a relaxed and welcoming environment.",
+        "registrationLink": "#",
+        "featured": true,
+        "status": "upcoming"
+    },
+    {
+        "id": 2,
+        "title": "Networking & Community Night",
+        "date": "2026-10-22",
+        "displayDate": "OCT 22, 2026",
+        "time": "6:00 PM – 8:00 PM",
+        "location": "Houston, Texas",
+        "category": "Community",
+        "description": "Build authentic relationships with RBTs, BCBAs, students, business owners, educators, leaders, and allies.",
+        "registrationLink": "#",
+        "featured": true,
+        "status": "upcoming"
+    },
+    {
+        "id": 3,
+        "title": "Leadership & Professional Development",
+        "date": "2026-11-14",
+        "displayDate": "NOV 14, 2026",
+        "time": "10:00 AM – 1:00 PM",
+        "location": "Houston, Texas",
+        "category": "Professional Development",
+        "description": "Learn, connect, exchange ideas, and strengthen your leadership alongside professionals committed to the future of ABA.",
+        "registrationLink": "#",
+        "featured": true,
+        "status": "upcoming"
+    }
+]
