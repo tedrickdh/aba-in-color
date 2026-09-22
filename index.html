@@ -215,27 +215,60 @@
      CULTURE STRIP
 ========================================= -->
 
-<section class="simple-culture-strip">
+<section
+    class="simple-culture-strip"
+    aria-label="ABA in Color community themes">
 
-    <div class="culture-track">
+    <div class="culture-marquee">
 
-        <span>COMMUNITY</span>
 
-        <span>●</span>
+        <div class="culture-track">
 
-        <span>CONNECTION</span>
+            <span>COMMUNITY</span>
+            <b>●</b>
 
-        <span>★</span>
+            <span>CONNECTION</span>
+            <b>★</b>
 
-        <span>CULTURE</span>
+            <span>CULTURE</span>
+            <b>●</b>
 
-        <span>●</span>
+            <span>LEADERSHIP</span>
+            <b>★</b>
 
-        <span>LEADERSHIP</span>
+            <span>OPPORTUNITY</span>
+            <b>●</b>
 
-        <span>★</span>
+            <span>COLLABORATION</span>
+            <b>★</b>
 
-        <span>OPPORTUNITY</span>
+        </div>
+
+
+        <div
+            class="culture-track"
+            aria-hidden="true">
+
+            <span>COMMUNITY</span>
+            <b>●</b>
+
+            <span>CONNECTION</span>
+            <b>★</b>
+
+            <span>CULTURE</span>
+            <b>●</b>
+
+            <span>LEADERSHIP</span>
+            <b>★</b>
+
+            <span>OPPORTUNITY</span>
+            <b>●</b>
+
+            <span>COLLABORATION</span>
+            <b>★</b>
+
+        </div>
+
 
     </div>
 
@@ -520,7 +553,7 @@
 
 
             <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61591704453161"
                 class="social-card"
                 target="_blank"
                 rel="noopener">
@@ -542,7 +575,7 @@
 
 
             <a
-                href="#"
+                href="https://www.linkedin.com/company/aba-in-color-houston/home/?viewAsMember=true"
                 class="social-card"
                 target="_blank"
                 rel="noopener">
@@ -564,7 +597,7 @@
 
 
             <a
-                href="#"
+                href="https://www.youtube.com/@ABAincolorHouston"
                 class="social-card"
                 target="_blank"
                 rel="noopener">
@@ -586,7 +619,7 @@
 
 
             <a
-                href="#"
+                href="https://www.instagram.com/aba_in_color_houston/"
                 class="social-card"
                 target="_blank"
                 rel="noopener">
@@ -650,93 +683,103 @@
 
 
         <form
-            class="simple-contact-form"
-            id="contactForm">
+    class="simple-contact-form"
+    id="contactForm"
+    action="https://script.google.com/macros/s/AKfycbyHL6p9N936zNsVTwGBj01n5iH767VMSVFVkoAKF3Wp4_ChnY72905QUmAggNx5j4cIDw/exec"
+    method="POST"
+    target="contactSubmissionFrame"
+>
+
+    <div class="form-row">
+
+        <div>
+            <label for="contactName">Name</label>
+            <input
+                type="text"
+                id="contactName"
+                name="name"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="contactEmail">Email</label>
+            <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                required
+            >
+        </div>
+
+    </div>
 
 
-            <div class="form-row">
-
-                <div>
-
-                    <label for="contactName">
-                        Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="contactName"
-                        name="name"
-                        required>
-
-                </div>
+    <div>
+        <label for="contactSubject">Subject</label>
+        <input
+            type="text"
+            id="contactSubject"
+            name="subject"
+            required
+        >
+    </div>
 
 
-                <div>
-
-                    <label for="contactEmail">
-                        Email
-                    </label>
-
-                    <input
-                        type="email"
-                        id="contactEmail"
-                        name="email"
-                        required>
-
-                </div>
-
-            </div>
+    <div>
+        <label for="contactMessage">Message</label>
+        <textarea
+            id="contactMessage"
+            name="message"
+            rows="6"
+            required
+        ></textarea>
+    </div>
 
 
+    <!-- Invisible spam protection -->
+    <div
+        class="contact-honeypot"
+        aria-hidden="true"
+    >
+        <label for="contactWebsite">
+            Leave this field empty
+        </label>
 
-            <div>
-
-                <label for="contactSubject">
-                    Subject
-                </label>
-
-                <input
-                    type="text"
-                    id="contactSubject"
-                    name="subject"
-                    required>
-
-            </div>
-
-
-
-            <div>
-
-                <label for="contactMessage">
-                    Message
-                </label>
-
-                <textarea
-                    id="contactMessage"
-                    name="message"
-                    rows="6"
-                    required></textarea>
-
-            </div>
+        <input
+            type="text"
+            id="contactWebsite"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+        >
+    </div>
 
 
-
-            <button
-                type="submit"
-                class="button button-black">
-
-                Send Message →
-
-            </button>
-
-
-            <p
-                class="contact-form-message"
-                id="contactFormMessage">
-            </p>
+    <button
+        type="submit"
+        class="button button-black"
+        id="contactSubmitButton"
+    >
+        Send Message →
+    </button>
 
 
-        </form>
+    <p
+        class="contact-form-message"
+        id="contactFormMessage"
+        aria-live="polite"
+    ></p>
+
+</form>
+
+
+<iframe
+    name="contactSubmissionFrame"
+    id="contactSubmissionFrame"
+    title="Contact form submission"
+    hidden
+></iframe>
 
 
     </div>

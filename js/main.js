@@ -1257,3 +1257,100 @@ async function loadSimpleHomepageEvents() {
 
 
 loadSimpleHomepageEvents();
+// ======================================================
+// ABA IN COLOR CONTACT FORM
+// ======================================================
+
+const abaContactForm =
+    document.getElementById("contactForm");
+
+const abaContactFrame =
+    document.getElementById("contactSubmissionFrame");
+
+const abaContactMessage =
+    document.getElementById("contactFormMessage");
+
+const abaContactButton =
+    document.getElementById("contactSubmitButton");
+
+
+let abaContactSubmitted = false;
+
+
+if (
+    abaContactForm &&
+    abaContactFrame &&
+    abaContactMessage &&
+    abaContactButton
+) {
+
+    // --------------------------------------------------
+    // FORM SUBMITTED
+    // --------------------------------------------------
+
+    abaContactForm.addEventListener(
+        "submit",
+        function () {
+
+            abaContactSubmitted = true;
+
+
+            abaContactButton.disabled = true;
+
+            abaContactButton.textContent =
+                "Sending...";
+
+
+            abaContactMessage.textContent =
+                "Sending your message...";
+
+        }
+    );
+
+
+    // --------------------------------------------------
+    // GOOGLE FINISHED PROCESSING
+    // --------------------------------------------------
+
+    abaContactFrame.addEventListener(
+        "load",
+        function () {
+
+            if (!abaContactSubmitted) {
+                return;
+            }
+
+
+            abaContactSubmitted = false;
+
+
+            // Clear form
+            abaContactForm.reset();
+
+
+            // Restore button
+            abaContactButton.disabled = false;
+
+            abaContactButton.textContent =
+                "Send Message →";
+
+
+            // Success message
+            abaContactMessage.textContent =
+                "Thanks for reaching out! Your message has been sent to the ABA in Color team.";
+
+
+            // Automatically remove message later
+            setTimeout(
+                function () {
+
+                    abaContactMessage.textContent = "";
+
+                },
+                10000
+            );
+
+        }
+    );
+
+}

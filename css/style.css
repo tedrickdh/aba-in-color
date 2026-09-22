@@ -5921,4 +5921,107 @@ html {
         flex-direction: column;
     }
 
+}/* =====================================================
+   FIX FULL-WIDTH SCROLLING CULTURE BAR
+===================================================== */
+
+.simple-culture-strip {
+    position: relative !important;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    overflow: hidden !important;
+
+    padding: 16px 0;
+
+    background: #151316 !important;
+    color: white;
+}
+
+
+.simple-culture-strip .culture-marquee {
+    display: flex !important;
+    width: max-content !important;
+    min-width: 100%;
+    overflow: visible;
+}
+
+
+.simple-culture-strip .culture-track {
+    display: flex !important;
+    flex-shrink: 0;
+
+    align-items: center;
+
+    gap: 35px;
+
+    min-width: 100vw;
+
+    padding-right: 35px;
+
+    white-space: nowrap;
+
+    font-family: "Archivo Black", sans-serif;
+    font-size: .82rem;
+    letter-spacing: .08em;
+
+    animation: abaCultureScroll 25s linear infinite;
+}
+
+
+.simple-culture-strip .culture-track span,
+.simple-culture-strip .culture-track b {
+    flex-shrink: 0;
+}
+
+
+.simple-culture-strip .culture-track b {
+    color: #efb83f;
+}
+
+
+@keyframes abaCultureScroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+
+.simple-culture-strip:hover .culture-track {
+    animation-play-state: paused;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .simple-culture-strip .culture-track {
+        animation: none;
+    }
+
+}
+/* =====================================================
+   ABA IN COLOR CONTACT FORM
+===================================================== */
+
+.contact-honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+#contactSubmitButton:disabled {
+    cursor: wait;
+    opacity: 0.7;
 }
