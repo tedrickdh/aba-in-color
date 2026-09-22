@@ -1085,3 +1085,175 @@ function setupResourceFilters() {
 // ======================================================
 
 loadResources();
+// ======================================================
+// SIMPLIFIED HOMEPAGE EVENTS
+// ======================================================
+
+async function loadSimpleHomepageEvents() {
+
+    const grid =
+        document.getElementById(
+            "simpleEventsGrid"
+        );
+
+
+    if (!grid) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                "data/events.json"
+            );
+
+
+        if (!response.ok) {
+            throw new Error(
+                "Could not load events."
+            );
+        }
+
+
+        const events =
+            await response.json();
+
+
+        const upcoming =
+            events
+                .filter(
+                    event =>
+                        event.status ===
+                        "upcoming"
+                )
+                .sort(
+                    (a, b) =>
+                        new Date(a.date)
+                        -
+                        new Date(b.date)
+                )
+                .slice(0, 3);
+
+
+        grid.innerHTML = "";
+
+
+        if (upcoming.length === 0) {
+
+            grid.innerHTML = `
+
+                <div class="no-events">
+
+                    <h3>
+                        New events are coming soon.
+                    </h3>
+
+                    <p>
+                        Follow ABA in Color on social media
+                        for upcoming announcements.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        upcoming.forEach(
+            event => {
+
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    "simple-event-card";
+
+
+                card.innerHTML = `
+
+                    <div class="simple-event-top">
+
+                        <span class="simple-event-date">
+
+                            ${event.displayDate}
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="simple-event-content">
+
+                        <p class="simple-event-category">
+
+                            ${event.category}
+
+                        </p>
+
+
+                        <h3>
+
+                            ${event.title}
+
+                        </h3>
+
+
+                        <p>
+
+                            ${event.time}<br>
+
+                            ${event.location}
+
+                        </p>
+
+
+                        <p>
+
+                            ${event.description}
+
+                        </p>
+
+                    </div>
+
+                `;
+
+
+                grid.appendChild(
+                    card
+                );
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            error
+        );
+
+
+        grid.innerHTML = `
+
+            <p>
+                Current events will be posted soon.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+loadSimpleHomepageEvents();
