@@ -1090,171 +1090,67 @@ loadResources();
 // ======================================================
 
 async function loadSimpleHomepageEvents() {
-
-    const grid =
-        document.getElementById(
-            "simpleEventsGrid"
-        );
-
-
-    if (!grid) {
-        return;
-    }
-
+    const grid = document.getElementById("simpleEventsGrid");
+    if (!grid) return;
 
     try {
-
-        const response =
-            await fetch(
-                "data/events.json"
-            );
-
-
-        if (!response.ok) {
-            throw new Error(
-                "Could not load events."
-            );
-        }
-
-
-        const events =
-            await response.json();
-
-
-        const upcoming =
-            events
-                .filter(
-                    event =>
-                        event.status ===
-                        "upcoming"
-                )
-                .sort(
-                    (a, b) =>
-                        new Date(a.date)
-                        -
-                        new Date(b.date)
-                )
-                .slice(0, 3);
-
+        const response = await fetch("data/events.json", { cache: "no-cache" });
+        if (!response.ok) throw new Error("Could not load events.");
+        const events = await response.json();
+        const today = new Date();
+        const todayLocal = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+        const upcoming = events
+            .filter(event => event.status === "upcoming" && event.date >= todayLocal)
+            .sort((a, b) => a.date.localeCompare(b.date))
+            .slice(0, 3);
 
         grid.innerHTML = "";
-
-
-        if (upcoming.length === 0) {
-
-            grid.innerHTML = `
-
-                <div class="no-events">
-
-                    <h3>
-                        New events are coming soon.
-                    </h3>
-
-                    <p>
-                        Follow ABA in Color on social media
-                        for upcoming announcements.
-                    </p>
-
-                </div>
-
-            `;
-
+        if (!upcoming.length) {
+            const empty = document.createElement("div");
+            empty.className = "no-events";
+            empty.innerHTML = "<h3>New events are coming soon.</h3><p>Follow ABA in Color for upcoming announcements.</p>";
+            grid.appendChild(empty);
             return;
-
         }
 
-
-        upcoming.forEach(
-            event => {
-
-
-                const card =
-                    document.createElement(
-                        "article"
-                    );
-
-
-                card.className =
-                    "simple-event-card";
-
-
-                card.innerHTML = `
-
-                    <div class="simple-event-top">
-
-                        <span class="simple-event-date">
-
-                            ${event.displayDate}
-
-                        </span>
-
-                    </div>
-
-
-                    <div class="simple-event-content">
-
-                        <p class="simple-event-category">
-
-                            ${event.category}
-
-                        </p>
-
-
-                        <h3>
-
-                            ${event.title}
-
-                        </h3>
-
-
-                        <p>
-
-                            ${event.time}<br>
-
-                            ${event.location}
-
-                        </p>
-
-
-                        <p>
-
-                            ${event.description}
-
-                        </p>
-
-                    </div>
-
-                `;
-
-
-                grid.appendChild(
-                    card
-                );
-
+        upcoming.forEach(event => {
+            const card = document.createElement("article");
+            card.className = "simple-event-card";
+            const top = document.createElement("div");
+            top.className = "simple-event-top";
+            const date = document.createElement("span");
+            date.className = "simple-event-date";
+            date.textContent = event.displayDate;
+            top.appendChild(date);
+            const content = document.createElement("div");
+            content.className = "simple-event-content";
+            const category = document.createElement("p");
+            category.className = "simple-event-category";
+            category.textContent = event.category;
+            const title = document.createElement("h3");
+            title.textContent = event.title;
+            const meta = document.createElement("p");
+            meta.textContent = event.time + " | " + event.location;
+            const description = document.createElement("p");
+            description.textContent = event.description;
+            content.append(category, title, meta, description);
+            if (event.registrationLink && event.registrationLink !== "#") {
+                const action = document.createElement("a");
+                action.href = event.registrationLink;
+                action.className = "button button-black";
+                action.textContent = "RSVP / Register →";
+                action.target = "_blank";
+                action.rel = "noopener noreferrer";
+                content.appendChild(action);
             }
-        );
-
+            card.append(top, content);
+            grid.appendChild(card);
+        });
+    } catch (error) {
+        console.error("Event loading error:", error);
+        grid.innerHTML = "<p>Current events will be posted soon.</p>";
     }
-
-    catch (error) {
-
-        console.error(
-            error
-        );
-
-
-        grid.innerHTML = `
-
-            <p>
-                Current events will be posted soon.
-            </p>
-
-        `;
-
-    }
-
 }
-
 
 loadSimpleHomepageEvents();
 // ======================================================
