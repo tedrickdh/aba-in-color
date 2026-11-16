@@ -1,14 +1,40 @@
 [
   {
+    "id": "AIC-E-MENTORSHIP-20261118",
+    "title": "THE HOT SEAT: Copy, Paste & Consequences — The Notes Don’t Lie… Or Do They?",
+    "date": "2026-11-18",
+    "displayDate": "NOV 18, 2026",
+    "time": "7:00–8:30 PM Central",
+    "location": "Virtual | Google Meet",
+    "category": "Mentorship Office Hour",
+    "description": "When documentation gets messy: join a mentorship conversation on copying, pasting, duplicating notes, professional judgment, and ethical documentation. Clinicians can volunteer de-identified documentation dilemmas for discussion. Do not include client identifiers.",
+    "registrationLink": "https://bit.ly/abaincolor",
+    "featured": true,
+    "status": "upcoming"
+  },
+  {
     "id": "AIC-E-HOLIDAY-20261218",
     "title": "ABA in Color Holiday Party | Ugly Sweaters, Good Vibes & Karaoke!",
     "date": "2026-12-18",
     "displayDate": "DEC 18, 2026",
     "time": "Time to be announced",
-    "location": "In person — venue to be announced",
+    "location": "In person | Houston area; venue to be announced",
     "category": "Networking",
-    "description": "Join the ABA in Color community for an in-person holiday celebration. Wear your ugly sweater, enjoy good company, and get ready for karaoke. Event time and venue details are coming soon.",
-    "registrationLink": "https://docs.google.com/forms/d/e/1FAIpQLSd9aMPOGjMcJU7G7up9Bb3mU_qSSXi1pcmT1qIAhWOlA_nCcg/viewform",
+    "description": "Celebrate the ABA in Color community with ugly sweaters, good company, networking, and karaoke. Time and venue details are coming soon.",
+    "registrationLink": "https://bit.ly/abaincolor",
+    "featured": true,
+    "status": "upcoming"
+  },
+  {
+    "id": "AIC-E-BRAIDSTOFADES-20270120",
+    "title": "BRAIDS TO FADES — Beyond the Barber Chair: Culture, Consent & the Ethics of Hair Care in ABA",
+    "date": "2027-01-20",
+    "displayDate": "JAN 20, 2027",
+    "time": "7:00–8:00 PM Central",
+    "location": "Virtual | Live online",
+    "category": "Ethics CEU",
+    "description": "1 BACB Ethics CEU for BCBAs and BCaBAs. Join Dr. Tranika Jefferson, PhD, BCBA-D, LBA, IBA; Miss Dee; and Ronald Shepherd to explore culturally responsive hair-care goals, client assent and autonomy, individualized grooming strategies, and collaboration with caregivers and barbers.",
+    "registrationLink": "https://bit.ly/abaincolor",
     "featured": true,
     "status": "upcoming"
   }
