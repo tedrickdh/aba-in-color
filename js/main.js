@@ -1250,3 +1250,284 @@ if (
     );
 
 }
+
+// ======================================================
+// BLOG DATABASE
+// ======================================================
+
+let allBlogPosts = [];
+
+
+
+async function loadBlog() {
+
+    const grid =
+        document.getElementById(
+            "blogPageGrid"
+        );
+
+
+    if (!grid) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch("data/blog.json");
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load blog data."
+            );
+
+        }
+
+
+        allBlogPosts =
+            await response.json();
+
+
+        displayBlogPage(
+            allBlogPosts
+        );
+
+
+        setupBlogFilters();
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Blog loading error:",
+            error
+        );
+
+
+        grid.innerHTML = `
+            <p>
+                Articles will be available soon.
+            </p>
+        `;
+
+    }
+
+}
+
+
+
+// ======================================================
+// DISPLAY BLOG POSTS
+// ======================================================
+
+function displayBlogPage(
+    postsToDisplay
+) {
+
+    const grid =
+        document.getElementById(
+            "blogPageGrid"
+        );
+
+
+    if (!grid) {
+        return;
+    }
+
+
+    const activePosts =
+        postsToDisplay.filter(
+            post =>
+                post.status === "active"
+        );
+
+
+    grid.innerHTML = "";
+
+
+    if (activePosts.length === 0) {
+
+        grid.innerHTML = `
+
+            <div class="no-articles">
+
+                <h3>
+                    More articles are coming.
+                </h3>
+
+                <p>
+                    ABA in Color is continuing to build
+                    the blog.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    activePosts.forEach(
+        post => {
+
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "blog-page-card";
+
+
+            const hasArticle =
+                post.link &&
+                post.link !== "#";
+
+
+            const action = hasArticle
+                ? `<a href="${post.link}" class="blog-action">READ ARTICLE →</a>`
+                : `<span class="blog-action blog-action-soon">ARTICLE COMING SOON</span>`;
+
+
+            card.innerHTML = `
+
+                <div class="blog-page-label">
+
+                    <span>
+                        ${post.category}
+                    </span>
+
+                    <time>
+                        ${post.displayDate || ""}
+                    </time>
+
+                </div>
+
+
+                <div class="blog-page-content">
+
+                    <h3>
+                        ${post.title}
+                    </h3>
+
+
+                    <p class="blog-page-meta">
+                        ${post.author || "ABA in Color"}
+                    </p>
+
+
+                    <p>
+                        ${post.description}
+                    </p>
+
+
+                    ${action}
+
+                </div>
+
+            `;
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+
+    );
+
+}
+
+
+
+// ======================================================
+// BLOG FILTERS
+// ======================================================
+
+function setupBlogFilters() {
+
+    const buttons =
+        document.querySelectorAll(
+            ".blog-filter"
+        );
+
+
+    if (buttons.length === 0) {
+        return;
+    }
+
+
+    buttons.forEach(
+        button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    buttons.forEach(
+                        item =>
+                            item.classList.remove(
+                                "active"
+                            )
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    const filter =
+                        button.dataset.filter;
+
+
+                    if (filter === "all") {
+
+                        displayBlogPage(
+                            allBlogPosts
+                        );
+
+                    }
+
+                    else {
+
+                        const filtered =
+                            allBlogPosts.filter(
+                                post =>
+                                    post.category
+                                    ===
+                                    filter
+                            );
+
+
+                        displayBlogPage(
+                            filtered
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+
+// ======================================================
+// LOAD BLOG DATA
+// ======================================================
+
+loadBlog();

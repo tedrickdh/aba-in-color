@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Read articles and stories from ABA in Color on CEU topics, ethics, leadership, community, culture, and professional growth across Applied Behavior Analysis.">
+
+    <title>Blog | ABA in Color</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="brand">
+
+                <div class="brand-mark">
+                    AIC
+                </div>
+
+                <div class="brand-copy">
+
+                    <strong>
+                        ABA in Color
+                    </strong>
+
+                    <span>
+                        Community • Culture • Leadership
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+
+            <nav
+                class="main-nav"
+                id="mainNav">
+
+                <a href="about.html">About</a>
+                <a href="community.html">Community</a>
+                <a href="events.html">Events</a>
+                <a href="opportunities.html">Opportunities</a>
+                <a href="resources.html">Resources</a>
+                <a href="blog.html">Blog</a>
+                <a href="get-involved.html">Get Involved</a>
+
+                <a
+                    href="contact.html"
+                    class="nav-cta">
+
+                    Connect With Us
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="page-hero blog-page-hero">
+
+            <div class="container blog-hero-grid">
+
+                <div>
+
+                    <p class="section-label light-label">
+                        THE BLOG
+                    </p>
+
+                    <h1>
+                        Stories.
+                        Lessons.
+                        Real talk.
+                    </h1>
+
+                    <p class="page-hero-copy">
+                        Articles and reflections on the topics
+                        ABA in Color covers together — CEU sessions,
+                        community conversations, ethics, culture,
+                        leadership, and professional growth.
+                    </p>
+
+                </div>
+
+
+                <div class="blog-poster">
+
+                    <span>
+                        READ
+                    </span>
+
+                    <strong>
+                        THE
+                    </strong>
+
+                    <strong>
+                        STORY.
+                    </strong>
+
+                    <div class="blog-poster-shapes">
+                        <span>●</span>
+                        <span>■</span>
+                        <span>★</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTRO -->
+
+        <section class="section">
+
+            <div class="container intro-grid">
+
+                <div>
+
+                    <p class="section-label">
+                        WHY WE WRITE
+                    </p>
+
+                    <h2>
+                        What we learn together
+                        shouldn't stay in the room.
+                    </h2>
+
+                </div>
+
+
+                <div class="intro-copy">
+
+                    <p class="large-copy">
+                        A good conversation can change
+                        how somebody practices.
+                    </p>
+
+                    <p>
+                        Our sessions and community conversations
+                        cover topics that matter across Applied
+                        Behavior Analysis. The blog is where those
+                        conversations live on — recaps, takeaways,
+                        and important topics our community can
+                        return to and share.
+                    </p>
+
+                    <p>
+                        New articles will be added as we cover
+                        new topics. Start with the stories below,
+                        and check back as the library grows.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FILTERS + ARTICLES -->
+
+        <section class="blog-list-section">
+
+            <div class="container">
+
+                <div class="blog-list-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            EXPLORE ARTICLES
+                        </p>
+
+                        <h2>
+                            Read the latest.
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        class="blog-filters"
+                        id="blogFilters">
+
+                        <button
+                            class="blog-filter active"
+                            data-filter="all">
+
+                            All
+
+                        </button>
+
+                        <button
+                            class="blog-filter"
+                            data-filter="CEU Recap">
+
+                            CEU Recaps
+
+                        </button>
+
+                        <button
+                            class="blog-filter"
+                            data-filter="Community">
+
+                            Community
+
+                        </button>
+
+                        <button
+                            class="blog-filter"
+                            data-filter="Ethics">
+
+                            Ethics
+
+                        </button>
+
+                        <button
+                            class="blog-filter"
+                            data-filter="Leadership">
+
+                            Leadership
+
+                        </button>
+
+                        <button
+                            class="blog-filter"
+                            data-filter="Professional Growth">
+
+                            Professional Growth
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="blog-page-grid"
+                    id="blogPageGrid">
+
+                    <p>
+                        Loading articles...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- BLOG TOPICS -->
+
+        <section class="section blog-topics-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="section-label">
+                        WHAT WE WRITE ABOUT
+                    </p>
+
+                    <h2>
+                        Topics that matter
+                        to this community.
+                    </h2>
+
+                </div>
+
+
+                <div class="blog-topic-grid">
+
+                    <article class="blog-topic-purple">
+                        <span>CEU</span>
+                        <h3>CEU Recaps</h3>
+                        <p>
+                            Key takeaways from our continuing
+                            education sessions, in plain language.
+                        </p>
+                    </article>
+
+                    <article class="blog-topic-teal">
+                        <span>COMMUNITY</span>
+                        <h3>Community Voices</h3>
+                        <p>
+                            Stories and reflections from the
+                            people who make up ABA in Color.
+                        </p>
+                    </article>
+
+                    <article class="blog-topic-gold">
+                        <span>ETHICS</span>
+                        <h3>Ethics in Practice</h3>
+                        <p>
+                            Honest conversation about documentation,
+                            consent, assent, and professional judgment.
+                        </p>
+                    </article>
+
+                    <article class="blog-topic-coral">
+                        <span>CULTURE</span>
+                        <h3>Culture &amp; Care</h3>
+                        <p>
+                            Culturally responsive practice and the
+                            everyday details that shape client care.
+                        </p>
+                    </article>
+
+                    <article class="blog-topic-cream">
+                        <span>GROWTH</span>
+                        <h3>Professional Growth</h3>
+                        <p>
+                            Mentorship, career development, and
+                            finding your people in ABA.
+                        </p>
+                    </article>
+
+                    <article class="blog-topic-black">
+                        <span>LEAD</span>
+                        <h3>Leadership</h3>
+                        <p>
+                            Advancing equity through diverse
+                            leadership, at every level of the field.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SHARE A STORY -->
+
+        <section class="blog-share-section">
+
+            <div class="container partners-grid">
+
+                <div>
+
+                    <p class="section-label light-label">
+                        HAVE A STORY TO SHARE?
+                    </p>
+
+                    <h2>
+                        Your experience could
+                        help somebody else.
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Covered a topic with us, presented a session,
+                        or have an important topic our community
+                        should talk about? We want to hear from you.
+                    </p>
+
+                    <p>
+                        Article ideas should be useful, relevant,
+                        and aligned with the mission of ABA in Color.
+                    </p>
+
+                    <a
+                        href="contact.html"
+                        class="button button-black">
+
+                        Suggest an Article →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CTA -->
+
+        <section class="blog-final-cta">
+
+            <div class="container blog-final-grid">
+
+                <div>
+
+                    <p class="section-label">
+                        KEEP THE CONVERSATION GOING
+                    </p>
+
+                    <h2>
+                        Read it here.
+                        Live it with us.
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        The blog shares the ideas. Our events are
+                        where the community works through them
+                        together — join us for the next one.
+                    </p>
+
+                    <a
+                        href="events.html"
+                        class="button button-black">
+
+                        Explore Events →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    ABA<br>
+                    IN<br>
+                    COLOR
+                </div>
+
+                <p>
+                    Advancing equity through diverse leadership.
+                </p>
+
+                <small>
+                    Founded in Houston, Texas.
+                </small>
+
+            </div>
+
+
+            <div>
+
+                <h4>Community</h4>
+
+                <a href="community.html">Who We Serve</a>
+                <a href="events.html">Events</a>
+                <a href="resources.html">Resources</a>
+                <a href="blog.html">Blog</a>
+                <a href="opportunities.html">Opportunities</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Organization</h4>
+
+                <a href="about.html">About</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="partners.html">Partners</a>
+                <a href="get-involved.html">Get Involved</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Connect</h4>
+
+                <a href="#">Facebook</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span>
+                ABA in Color. All rights reserved.
+            </p>
+
+            <p>
+                Community • Culture • Leadership
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
